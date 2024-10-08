@@ -3,16 +3,16 @@ import { Schema, Types, model, type Document } from 'mongoose';
 interface IReaction extends Document {
     reactionId: Schema.Types.ObjectId,
     reactionBody: string;
-    username: Schema.Types.ObjectId,
+    username: string,
     createdAt: Date,
 }
 
 interface IThought extends Document {
     thoughtText: string, 
     createdAt: Date,
-    username: Schema.Types.ObjectId, 
+    username: string, 
     
-    reactions?: Schema.Types.ObjectId[], 
+    reactions?: IReaction[], 
     
 }
 const reactionSchema = new Schema<IReaction>(
@@ -27,8 +27,8 @@ const reactionSchema = new Schema<IReaction>(
             maxlength: 128,
         },
         username: {
-            type: Schema.Types.ObjectId,
-            ref: "User",
+            type: String,
+            // ref: "User",
             required: true,
         },
         createdAt: {
@@ -57,8 +57,8 @@ const thoughtSchema = new Schema<IThought>(
             get: (timestamp: Date) => new Date(timestamp),
         },
         username: {
-            type: Schema.Types.ObjectId,
-            ref: "User",
+            type: String,
+            // ref: "User",
             required: true,
         },
         reactions: [reactionSchema],
