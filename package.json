@@ -1,12 +1,12 @@
 {
-  "name": "socialmedia-api",
+  "name": "socialnetwork-api",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "type": "module",
   "scripts": {
     "build": "npx tsc",
-    "start": "node dist/server.js",
+    "start": "npm run build && node dist/server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "seed": "node dist/seeds/index.js",
     "render-build": "npm install && npm run build",
