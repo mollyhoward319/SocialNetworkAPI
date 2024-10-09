@@ -23,9 +23,13 @@ Type "npm run start" to build and start the server.
 
 This is a server-side app. Once the server is running, use Insomnia to test routes. An example is located below. 
 
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
+
+[Insomnia Screenshot](assets/images/screenshot.png)
+
+
+  Video Demo Link: [https://drive.google.com/file/d/1aj4rxVbSBiLS537YpVhnBkwOpOqS8dmR/view?usp=sharing]
+
+
 
 ## License
 
