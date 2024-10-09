@@ -11,8 +11,10 @@ import {
 } from '../../controllers/thoughtsControllers.js';
 router.route('/').get(getAllThoughts).post(createThought);
 
-router.route('/:thoughtsId').get(getThoughtById).put(updateThought).delete(deleteThought);
+router.route('/:thoughtId').get(getThoughtById).put(updateThought).delete(deleteThought);
 
-router.route('/:thoughtsId/reaction').post(addReaction).delete(removeReaction);
+router.route('/:thoughtId/reaction').post(addReaction)
+
+router.route('/:thoughtId/reaction/:reactionId').delete(removeReaction);
 
 export { router as thoughtsRouter};
