@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 
-import { User } from "../models/index.js";
+import { User, Thought } from "../models/index.js";
 
 export const getAllUsers = async (_req: Request, res: Response) => {
     try {
@@ -47,7 +47,7 @@ export const updateUser = async (req: Request, res: Response) => {
     try {
         const userId = req.params.id;
         const updateData = req.body;
-        const user = await User.findByIdAndUpdate(userId, updateData, {new: true});
+        const user = await User.findOneAndUpdate({_id:userId}, updateData, {new: true});
 
         if (!user) {
             return res.status(404).json({message: "User not found"});
@@ -60,12 +60,15 @@ export const updateUser = async (req: Request, res: Response) => {
 export const deleteUser = async ( req: Request, res: Response) => {
     try {
         const userId = req.params._id;
+
+        await Thought.deleteMany({userId: userId});
+
         const user = await User.findOneAndDelete({ id: userId });
 
         if (!user) {
             return res.status(404).json({message: 'User not found'});
         }
-        return res.json({message: 'User successfully deleted'});
+        return res.json({message: 'User and thoughts successfully deleted'});
 
     } catch (err) {
         console.log(err);
@@ -82,11 +85,11 @@ export const addFriend = async (req: Request, res: Response) => {
         const userId = req.params.id;
         const friendId = req.params.friendId;
 
-        if (!friendId || userId === friendId) {
+        if (!friendId || userId == friendId) {
             return res.status(400).json({message: 'Invalid friend ID'});
         }
 
-        const user = await User.findByIdAndUpdate( userId, {$addToSet: {friends: friendId}}, {new: true});
+        const user = await User.findOneAndUpdate( {_id: userId}, {$addToSet: {friends: friendId}}, {new: true});
 
         if (!user) {
             return res.status(404).json({message: 'User not found'})

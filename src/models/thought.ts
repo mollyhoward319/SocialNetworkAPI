@@ -28,7 +28,6 @@ const reactionSchema = new Schema<IReaction>(
         },
         username: {
             type: String,
-            // ref: "User",
             required: true,
         },
         createdAt: {
