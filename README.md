@@ -49,5 +49,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 
 ## How to Contribute
+To contribute to this repo, download the code or git clone the repo: [https://github.com/mollyhoward319/SocialNetworkAPI]. Then, create a new branch by typing "git checkout -b 'branch name'" in your terminal. From there, you can make edits and submit a pull request to provide your edits and/or feedback.
 
-You can edit this repo as desired with credit and questions sent to Molly Howard: mollyhoward.developer@gmail.com [https://github.com/mollyhoward319/]
+You can also fork this repo as desired with credit and questions sent to Molly Howard: mollyhoward.developer@gmail.com [https://github.com/mollyhoward319/]
