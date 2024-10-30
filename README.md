@@ -10,12 +10,14 @@ It uses Express.js for routing, Mongo DB database, and Mongoose ODM.
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Credits](#credits)
 - [License](#license)
+- [How To Contribute](#howtocontribute)
 
 ## Installation
 Download Repo from Github: [https://github.com/mollyhoward319/SocialNetworkAPI] 
+In terminal, type git clone "https://github.com/mollyhoward319/SocialNetworkAPI.git"
 
+To use the application, you must have Node.js & MongoDB installed. 
 In your terminal, type "npm i" to install necessary packages.
 Type "npm run start" to build and start the server.
 
@@ -27,7 +29,9 @@ This is a server-side app. Once the server is running, use Insomnia to test rout
 [Insomnia Screenshot](assets/images/screenshot.png)
 
 
-  Video Demo Link: [https://drive.google.com/file/d/1aj4rxVbSBiLS537YpVhnBkwOpOqS8dmR/view?usp=sharing]
+Video Demo: 
+The attached video is a demonstration of how to test the endpoints in Insomnia. 
+[https://drive.google.com/file/d/1aj4rxVbSBiLS537YpVhnBkwOpOqS8dmR/view?usp=sharing]
 
 
 
